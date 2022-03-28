@@ -1,0 +1,43 @@
+<!-- <form [formGroup]="signinForm" (ngSubmit)="tryFirebaseLogin()"> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
+crossorigin="anonymous">
+<div class="main">
+    <img class="img-login"
+        src="https://cutewallpaper.org/21/chef-backgrounds/Chef-background-for-powerpoint-4-Background-Check-All.jpg"
+        alt="">
+    <div class="main-login">
+        <h1 class="login-title">CHEF MANAGER</h1>
+        <!-- <div class="tittle">Chef Manager</div> -->
+        <div class="form-login">
+            <div class="form-group">
+                <label for="mail">G-Mail</label>
+                <input type="text" class="form-control" from aria-describedby="UserNameHelp" placeholder="Mail"
+                    formControlName="mail">
+            </div>
+            <div class="form-group">
+                <label for="psw">PASSWORD</label>
+                <input type="password" class="form-control" from aria-describedby="UserNameHelp" placeholder="Password"
+                    formControlName="password">
+            </div>
+        </div>
+
+        <div class="container-enter">
+            <div class="container-btn ">
+                <button type="button" class="btn size-L" (click)="tryFirebaseLogin()">Login</button>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="container-btn">
+                <button type="submit" class="btn fas fa-sign-in-alt"(click)="register()">   Sign Up</button>
+            </div>
+            <div class="container-btn">
+                <button type="button" class="btn fab fa-google" (click)="tryGoogleLogin()">    Login with Google</button>
+            </div>         
+        </div>
+       
+
+    </div>
+</div>
+<!-- </form> -->

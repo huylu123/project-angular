@@ -1,0 +1,155 @@
+<!-- <img class="img-main"
+    src="https://png.pngtree.com/thumb_back/fh260/back_our/20190621
+    /ourmid/pngtree-restaurant-food-menu-background-image_190820.jpg"
+    alt=""> -->
+ 
+    <link rel="stylesheet" url="../item-list/imgAvatar/">
+<div class="main">
+    <div class="main-header">
+        <!-- tim kiếm -->
+        <div class="header">
+            <!-- <div class="task-header">
+                <a href="" class="task-bar">
+                    <li class="bar">Home</li>
+                    <li class="bar">Notification</li>
+                    <li class="bar">Support</li>
+                    <li class="bar " style="margin-right:20px ;">Log Out</li>
+                </a>
+            </div> -->
+            <div class="input-search">
+                <form [formGroup]="formsearch" class=" navbar-search">
+                    <div class="input-group">
+                        <input (input)="inputNull()" [(ngModel)]="searchName" type="text"
+                            class="form-control bg-light border-0 small" formControlName="search"
+                            placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-dark" type="button" (click)="Search()">
+                                <i class="fas fa-search fa-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="table">
+
+            <tbody *ngFor="let items of   items1  ">
+                <div class="item ">
+                    <div class="avatar">
+                        <img class="img-avatar"
+                            src="{{items.avatar}}"                     
+                            alt="">
+                            
+                    </div>
+                    <!-- <div class="id">
+                        ID:{{ items.id }}
+                    </div> -->
+                    <div class="name">Full Name : 
+                        <div class="lname">
+                            {{ items.lname }}
+                        </div>
+                        <div class="fname">
+                            {{ items.fname }}
+                        </div>
+                    </div>
+                    <div class="sex-stardate">
+                        <div class="sex">
+                            Sex:  {{items.sex }}
+                        </div>
+                        <div class="stardate">
+                            Stardate:{{ items.starDate }}
+                        </div>
+                    </div>
+                    <div class="check-year">
+                        <div class="experience">
+                            Experience:{{ items.experience }} (year)
+                        </div>
+                        <div class="status" >
+                            More 2 year :{{ items.status }}
+                        </div>
+                    </div>
+                    <div class="description">
+                        Description:{{ items.description }}
+                    </div>
+                    <div class="btn">
+                        <div class="btn-edit">
+                            <button class="btn-edit-style btn-style" (click)="edit(items)">Edit</button>
+                        </div>
+                        <div class="btn-detele">
+                            <button class="btn-delete-style btn-style" (click)="delete($event,items)">Delete</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div *ngIf="editState && nhanvienToEdit.id== items.id">
+                    <form [formGroup]="formupdate">
+                        <div class="update-form">
+                            <h2>UPDATE</h2>
+                            <!-- <div class="id-update">
+                                <label for="id" >ID:</label><br>
+                                <input type="text" name="fname" size="53" formControlName="id" placeholder=""
+                                    [(ngModel)]="items.id"><br>
+                            </div> -->
+                            <div class="name-update">
+                                <div class="fname">
+                                    <label for="fname" >First Name:</label><br>
+                                    <input type="text" name="fname" size="25" formControlName="fname" placeholder=""
+                                        [(ngModel)]="items.fname"><br>
+                                </div>
+                                <div class="lname">
+                                    <label for="lname" >Last name:</label><br>
+                                    <input type="text" name="lname" size="25" formControlName="lname" placeholder=""
+                                        [(ngModel)]="items.lname"><br>
+                                </div>
+                            </div>
+                            <div class="sex-stardate">
+                                <div class="sex-edit">
+                                    <label for="sex" >Sex</label><br>
+                                    <select name="carlist" form="carform" formControlName="sex" placeholder=""
+                                        [(ngModel)]="items.sex">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="starDate " >StarDate:</label><br>
+                                    <input type="date" name="starDate" size="75" formControlName="starDate" placeholder=""
+                                        [(ngModel)]="items.starDate"><br>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="experience" >Experience</label><br>
+                                <input type="number" name="experience" size="75" formControlName="experience" placeholder=""
+                                    [(ngModel)]="items.experience"><br>
+                            </div>
+                            <div>
+                                <label for="description" >Description</label><br>
+                                <input type="text" name="description" size="53" formControlName="description" placeholder=""
+                                    [(ngModel)]="items.description"><br>
+                            </div>
+    
+                            <div>
+    
+                                <button type="submit" (click)="update(formupdate.value)">
+                                    UPDATE
+                                </button>
+                                <button> <a class="" (click)="back()">Back</a></button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+
+            </tbody>
+            <button class="nav-item" (click)="add()">
+                <a class="nav-link" >
+                    <i class="fas fa-fw fa-table" ></i>
+                    <span>Add</span></a>
+            </button>
+        </div>
+    </div>
+</div>

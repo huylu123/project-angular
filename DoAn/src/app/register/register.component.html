@@ -1,0 +1,76 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <h1>Register</h1>
+    <div class="header">
+      <p class="header-register">CHEF Manager</p>
+    </div>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" id="email" required formControlName="mail">
+    <div
+    *ngIf="registerForm.controls.mail.invalid && (registerForm.controls.mail.dirty ||registerForm.controls.mail.touched)">
+    <small *ngIf="registerForm.controls.mail.hasError('required')" class="text-danger">E-Mail
+        is
+        required.</small>
+</div>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="psw" required formControlName="password">
+    <div
+    *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty ||registerForm.controls.password.touched)">
+    <small *ngIf="registerForm.controls.password.hasError('required')" class="text-danger">Password
+        is
+        required.</small>
+</div>
+    <hr>
+    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+    <button [disabled]="!registerForm.valid" (ngSubmit)="onSubmit()" type="submit" class="registerbtn" >Register</button>
+  </div>
+  
+  <div class="container signin">
+    <p>Already have an account? <a href="#">Sign in</a>.</p>
+  </div>
+
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" 
+integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" 
+crossorigin="anonymous"> -->
+    <!-- <div class="form-group">
+      <label for="mail" style="color: rgb(29, 178, 216);">Mail:</label>
+      <input type="text" class="form-control"  name="mail" size="75"  placeholder="mail" formControlName="mail">
+    </div>
+    <div class="form-group">
+      <label for="password" style="color: rgb(29, 178, 216);">Mat Khau</label><br>
+      <input type="password" class="form-control" name="password" size="75" formControlName="password" placeholder="password"><br>
+    </div> -->
+    <!-- <div class="form-group">
+      <label for="mail">Mail</label>
+      <input type="text" class="form-control" from aria-describedby="UserNameHelp" placeholder="Enter ID"
+      formControlName="mail" >
+      <div *ngIf="registerForm.controls.mail.invalid && (registerForm.controls.mail.dirty ||registerForm.controls.mail.touched)"> -->
+        <!-- <small *ngIf="registerForm.controls.mail.errors.required" class="text-danger">mail is required.</small>
+        <small *ngIf="registerForm.controls.mail.errors.email" class="text-danger">Not type of mailmail</small>
+         -->
+    <!-- </div>
+      
+    </div>
+    <div class="form-group">
+      <label for="password">password</label>
+      <input type="text" class="form-control" from aria-describedby="UserNameHelp" placeholder="Enter ID"
+      formControlName="password" >
+      <div *ngIf="registerForm.controls.password.invalid && (registerForm.controls.password.dirty ||registerForm.controls.password.touched)"> -->
+        <!-- <small *ngIf="registerForm.controls.password.errors.required" class="text-danger">password is required.</small>
+        <small *ngIf="registerForm.controls.password.errors.minlenght" class="text-danger">not enough lenhgtl   enhgt</small>
+         -->
+    <!-- </div>
+    </div>
+     -->
+    
+    <!-- <div>
+    
+     <button (ngSubmit)="onSubmit()"> Tao Tai Khoan</button>
+    </div> -->
+    
+    </form>
+    

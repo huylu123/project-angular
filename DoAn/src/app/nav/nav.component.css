@@ -1,0 +1,24 @@
+.main-header{
+   
+}
+
+.task-bar{
+    display: flex;
+    text-decoration: none;
+    margin-left: 300px;
+}
+
+.bar{
+   
+    list-style: none;
+    margin-left: 20px;
+    color: #CCC;
+    font-size: 1em;
+}
+
+.title{
+    text-align: center;
+    font-size: 3em;
+    font-weight: 800;
+    color: #CCC;
+}

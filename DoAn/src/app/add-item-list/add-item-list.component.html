@@ -1,0 +1,115 @@
+
+<form [formGroup]="formaddItemList">
+    <!-- <form [formGroup]="insertFrm"> -->
+
+    <div class="main-input">
+        <img class="img-from-input"
+            src="https://media.istockphoto.com/vectors/teenage-boy-pastry-chef-with-menu-vector-id466762778?k=20&m=466762778&s=612x612&w=0&h=rcgZ_xwhmT4Z_rAUJ0Yl8bQk7OmMAEWKisMhA4nFGUg="
+            alt="">
+        <div class="from-input">
+            <h2 class="title">
+                Form Input Chef
+            </h2>
+            <div class="name-input ">
+                <div class="fname pdt10px">
+                    <label for="fname">First Name:</label><br>
+                    <input type="text" class="size-input size-name" id="fname" formControlName="fname"><br>
+                    <div
+                        *ngIf="formaddItemList.controls.fname.invalid && (formaddItemList.controls.fname.dirty ||formaddItemList.controls.fname.touched)">
+                        <small *ngIf="formaddItemList.controls.fname.hasError('required')" class="text-danger">First
+                            name
+                            is
+                            required.
+                        </small>
+                    </div>
+                </div>
+                <div class="lname pdt10px">
+                    <label for="lname">Last Name:</label><br>
+                    <input type="text" class="size-input size-name" id="lname" formControlName="lname"><br>
+                    <div
+                        *ngIf="formaddItemList.controls.lname.invalid && (formaddItemList.controls.lname.dirty ||formaddItemList.controls.lname.touched)">
+                        <small *ngIf="formaddItemList.controls.lname.hasError('required')" class="text-danger">Last Name
+                            is
+                            required.</small>
+                    </div>
+                </div>
+                <!-- <div class="id pdt10px">
+                    <label for="id">ID:</label><br>
+                    <input type="text" class="size-input size-id" id="id" formControlName="id"><br>
+                    <div
+                        *ngIf="formaddItemList.controls.id.invalid && (formaddItemList.controls.id.dirty ||formaddItemList.controls.id.touched)">
+                        <small *ngIf="formaddItemList.controls.id.hasError('required')" class="text-danger">ID is
+                            required.
+                        </small>
+                    </div>
+                </div> -->
+            </div>
+            <div class="one-row ">
+                <div class="sex pdt10px">
+                    <label for="text">Sex</label><br>
+                    <select form="text" formControlName="sex">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                    
+                </div>
+                <div class="star-date pdt10px ">
+                    <label for="starDate">Star Date:</label><br>
+                    <input type="date" class="size-input" formControlName="starDate"><br>
+                    <div
+                    *ngIf="formaddItemList.controls.starDate.invalid && (formaddItemList.controls.starDate.dirty ||formaddItemList.controls.starDate.touched)">
+                    <small *ngIf="formaddItemList.controls.starDate.hasError('required')" class="text-danger">StarDate
+                        is
+                        required.</small>
+                </div>
+                </div>
+            </div>
+            <div class="check-experience">
+                <div class="experience pdt10px ">
+                    <label for="experience">Experience:</label><br>
+                    <input type="number" class="size-input" formControlName="experience"><br>
+                    <div
+                    *ngIf="formaddItemList.controls.experience.invalid && (formaddItemList.controls.experience.dirty ||formaddItemList.controls.experience.touched)">
+                    <small *ngIf="formaddItemList.controls.experience.hasError('required')" class="text-danger">Experience
+                        is
+                        required.</small>
+                </div>
+                </div>
+                <div class="ckeck-box pdt10px">
+                    <label for="lname">Experience more 2 year:</label><br>
+                    <!-- <label class="container"> 
+                        <input type="checkbox" [(ngModel)]="theCheckbox" />
+                        
+                          <span class="checkmark"></span>
+                        </label> -->
+                        <!-- <input type="checkbox" [(ngModel)]="theCheckbox" /> -->
+                    <input type="checkbox" class="checkbox" name="status" formControlName="status">
+                </div>
+                <div >   
+                         <!-- <input type="text" value="{{theCheckbox}}"> -->
+<!--                           
+                        <input type="checkbox" value="{{theCheckbox}}" (click)="click($event)">A
+                        <input formControlName="status" type="checkbox" value="b" (click)="click($event)">B -->
+
+                </div>
+                
+            </div>
+            <div class="avatar pdt10px">
+                <label for="avatar">Avatar:</label><br>
+                <input type="text" class="size-input" formControlName="avatar"><br>
+            </div>
+            <div class="description pdt10px">
+                <label for="description">Description:</label><br>
+                <input type="text" class="size-input" formControlName="description"><br>
+            </div>
+
+            <div class="btn-form-add">
+                <button class="button btn-back" (click)="back()">Back</button>
+                <button type="submit" class="button btn-add" [disabled]="!formaddItemList.valid" (click)="add(formaddItemList.value)">ADD</button>         
+            </div>
+        </div>
+    </div>
+    
+    <!-- </form> -->
+
+</form>
